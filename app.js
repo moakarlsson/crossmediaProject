@@ -1,10 +1,9 @@
-import app from "./app.js";
-const PORT = process.argv[2] || process.env.PORT || 3000;
+// I denna filen läggs routes in, exempel:
+// import tasksRouter from "./routes/tasks.js"
+//app.use('/tasks', tasksRouter)
+import express from "express";
+const app = express(); 
 
-app.listen(PORT, (err) => {
-    if(err) {
-        console.error("Server failed to start:", err);
-    } else {
-        console.log(`Server running on port ${PORT}`);
-    }
-});
+app.use(express.json());
+
+export default app;
